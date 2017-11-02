@@ -1,6 +1,4 @@
-import React, {
-  PropTypes,
-} from 'react';
+import React from 'react';
 import {
   Image,
   Linking,
@@ -17,12 +15,6 @@ import authenticateWithGithubAsync from '../api/authenticateWithGithubAsync';
 import authenticateWithRedditAsync from '../api/authenticateWithRedditAsync';
 
 export default class HomeScreen extends React.Component {
-  static route = {
-    navigationBar: {
-      visible: false,
-    },
-  }
-
   state = {
     githubToken: null,
     redditToken: null,

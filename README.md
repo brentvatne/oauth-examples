@@ -3,24 +3,18 @@
 In the `api/` directory there are `authenticateWith*Async` functions
 that handle the OAuth flow for services like Github and Reddit.
 
-To use this with an Exponent app, you don't have to change pretty much
-anything (although you should read the `Using it in the real world`
-section -- and register another application for the redirect url that
-you would have when published).
-
-It's a bit more complicated with vanilla React Native because you
-need to give your app a scheme so you can redirect back to the
-application via the redirect URL. If you'd like to add instructions
-for how to do that here, a pull request is welcome, otherwise just
-use Exponent :)
+All you need to do is add your credentials for this to work in your app,
+and if you build a standalone app, make sure you set a scheme (see the
+[AuthSession guide](https://docs.expo.io/versions/latest/sdk/auth-session.html)) for
+more info.
 
 ## Run the project
 
 - Clone this project and run `npm install`
-- Install [XDE](https://docs.getexponent.com/versions/latest/introduction/installation.html)
+- Install [XDE](https://docs.expo.io/versions/latest/introduction/installation.html) (or exp, via `npm i -g exp`)
 - Rename `credentials.example.js` to `credentials.js`
-- Open this project in XDE
-- Start the simulator or connect to the project from the Exponent client on your phone
+- Open this project in XDE (or exp, via `exp start`)
+- Start the simulator or connect to the project from the Expo client on your phone
 - Process to the following set up steps to register applications with services you want to authenticate with.
 
 ### Set up a Github application
@@ -38,8 +32,3 @@ use Exponent :)
 ![](http://url.brentvatne.ca/12nFh.png)
 
 - Add your `clientId` to `credentials.js`
-
-### Using it in the real world
-
-You will need to register separate apps on Github and Reddit for
-development and production because the redirect URIs will be different.
